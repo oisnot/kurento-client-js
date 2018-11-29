@@ -13,11 +13,12 @@ fs.unlink(LINK_PATH, function(error)
 
   var kurentoClient = process.env.KURENTOCLIENT_COV ? './lib-cov':'./lib'
 
+  //'-c', 'wock:node_modules/wock',
   var argv =
   [
     '-c', 'kurentoClient:'+kurentoClient,
     '-c', 'node_modules/qunit-reporter-junit',
-    '-c', 'wock:node_modules/wock',
+
     '-c', 'test/_common.js',
     '-c', 'test/_proxy.js',
     'test/','test/core','test/elements','test/filters', 'test/transactions',
@@ -30,11 +31,11 @@ fs.unlink(LINK_PATH, function(error)
     if(code)
       process.exit(code)
 
+    //'-c', 'wock:node_modules/wock',
     argv =
     [
       '-c', 'kurentoClient:'+kurentoClient,
       '-c', 'node_modules/qunit-reporter-junit',
-      '-c', 'wock:node_modules/wock',
       '-c', 'test/_common.js',
       '-c', 'test/_proxy.js',
       'test/','test/core','test/elements','test/filters', 'test/transactions',

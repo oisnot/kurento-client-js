@@ -13,11 +13,11 @@ fs.unlink(LINK_PATH, function(error)
 
   var kurentoClient = process.env.KURENTOCLIENT_COV ? './lib-cov':'./lib'
 
+  //    '-c', 'wock:node_modules/wock',
   var argv =
   [
     '-c', 'kurentoClient:'+kurentoClient,
     '-c', 'node_modules/qunit-reporter-junit',
-    '-c', 'wock:node_modules/wock',
     'test_reconnect', 'test_reconnect/index.js'
   ]
 

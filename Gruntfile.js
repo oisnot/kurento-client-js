@@ -57,14 +57,14 @@ module.exports = function (grunt) {
     },
 
     // Generate instrumented version for coverage analisis
-    jscoverage: {
-      all: {
-        expand: true,
-        cwd: 'lib/',
-        src: ['**/*.js'],
-        dest: 'lib-cov/'
-      }
-    },
+    // jscoverage: {
+    //   all: {
+    //     expand: true,
+    //     cwd: 'lib/',
+    //     src: ['**/*.js'],
+    //     dest: 'lib-cov/'
+    //   }
+    // },
 
     // Generate browser versions and mapping debug file
     browserify: {
@@ -173,11 +173,11 @@ module.exports = function (grunt) {
     },
 
     // githooks configuration
-    githooks: {
-      all: {
-        'pre-commit': 'jsbeautifier:git-pre-commit'
-      }
-    },
+    // githooks: {
+    //   all: {
+    //     'pre-commit': 'jsbeautifier:git-pre-commit'
+    //   }
+    // },
 
     jsbeautifier: {
       options: {
@@ -236,11 +236,11 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-jscoverage');
+  //grunt.loadNpmTasks('grunt-jscoverage');
   grunt.loadNpmTasks('grunt-jsdoc');
   grunt.loadNpmTasks('grunt-npm2bower-sync');
   grunt.loadNpmTasks('grunt-shell');
-  grunt.loadNpmTasks('grunt-githooks');
+  //grunt.loadNpmTasks('grunt-githooks');
   grunt.loadNpmTasks('grunt-jsbeautifier');
   grunt.loadNpmTasks('grunt-contrib-jshint');
 
@@ -249,9 +249,9 @@ module.exports = function (grunt) {
     'jsbeautifier:git-pre-commit'
   ]);
   grunt.registerTask('bower', ['sync:bower', 'shell:bower']);
-  grunt.registerTask('coverage', [
-    'jscoverage',
-    'shell:pre-coverage', 'browserify:coverage', 'browserify:test',
-    'shell:post-coverage'
-  ]);
+  // grunt.registerTask('coverage', [
+  //   'jscoverage',
+  //   'shell:pre-coverage', 'browserify:coverage', 'browserify:test',
+  //   'shell:post-coverage'
+  // ]);
 };
